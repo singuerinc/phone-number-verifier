@@ -1,23 +1,51 @@
 # Node Phone Number Verifier
 
-Use this module to verify that your user has access to a phone number.
+Minimal Node module to verify phone numbers using [Twilio Verify](https://www.twilio.com/verify).
 
-Powered by [Twilio Verify](https://www.twilio.com/verify).
+## Use-cases
+* **Make sure your user actually has access to a phone number before sending messages and inuring $**
+
+## Install
 
 ```
-const NumberVerifier = require('phone-number-verifier')
-const numberVerifier = new NumberVerifier({ apiKey: '' })
-
-numberVerifier.sendCode({
-  countryCode: '44',
-  phoneNumber: ''
-})
-
-
-const response = numberVerifier.checkCode({
-  countryCode: '44',
-  phoneNumber: '',
-  verificationCode: '123'
-})
-console.log(response.success)
+npm install @bookercodes/phone-number-verifier
 ```
+
+## Usage
+
+Import then instantiate `@bookercodes/phone-number-verifier` with your Twilio Verify key.
+
+```
+const NumberVerifier = require('@bookercodes/phone-number-verifier')
+const numberVerifier = new NumberVerifier({ apiKey: '1eM91xy4Wkqy0vYSy2wEUqS8HDpAAG2' })
+```
+
+
+Send verification token:
+
+```
+try {
+  await numberVerifier.sendCode({
+    countryCode: '44',
+    phoneNumber: ''
+  })
+} catch (error) {
+  console.error('error', error)
+}
+```
+
+Check the verification token:
+
+```
+try {
+  const response = await numberVerifier.checkCode({
+    countryCode: '44',
+    phoneNumber: '',
+    verificationCode: '123'
+  })
+} catch (error) {
+  console.error('error', error)
+}
+```
+
+**Remember to `catch` errors**.

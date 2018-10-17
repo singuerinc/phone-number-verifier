@@ -1,5 +1,5 @@
 {
-  "name": "phone-number-verifier",
+  "name": "@bookercodes/phone-number-verifier",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
