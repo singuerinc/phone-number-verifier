@@ -1,5 +1,9 @@
 # Node Phone Number Verifier
 
+Use this module to verify that your user has access to a phone number.
+
+Powered by [Twilio Verify](https://www.twilio.com/verify).
+
 ```
 const NumberVerifier = require('phone-number-verifier')
 const numberVerifier = new NumberVerifier({ apiKey: '' })
