@@ -1,9 +1,10 @@
-# Node Phone Number Verifier
+# Phone Number Verifier
 
 Minimal Node module to verify phone numbers using [Twilio Verify](https://www.twilio.com/verify).
 
 ## Use-cases
-* **Make sure your user actually has access to a phone number before sending messages and inuring $**
+
+- **Make sure your user actually has access to a phone number before sending messages and inuring $**
 
 ## Install
 
@@ -19,7 +20,6 @@ Import then instantiate `@bookercodes/phone-number-verifier` with your Twilio Ve
 const NumberVerifier = require('@bookercodes/phone-number-verifier')
 const numberVerifier = new NumberVerifier({ apiKey: '1eM91xy4Wkqy0vYSy2wEUqS8HDpAAG2' })
 ```
-
 
 Send verification token:
 

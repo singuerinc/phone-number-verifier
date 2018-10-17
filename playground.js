@@ -36,13 +36,10 @@ const sendCode = async (
   }
 };
 
-const checkCode = async (
+const checkCode = (api_key, axios_get = axios.get) => async (
   country_code,
   phone_number,
-  verification_code,
-  api_key,
-  url = TWILIO_VERIFICATION_CHECK,
-  axios_get = axios.get
+  verification_code
 ) => {
   if (!country_code) {
     throw new Error(ERROR_COUNTRY_CODE_REQUIRED);
